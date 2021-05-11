@@ -27,9 +27,8 @@ function displayLibrary(newBook) {
     td1.textContent = newBook.author;
     td2.textContent = newBook.title;
     td3.textContent = newBook.pages;
-    td4.textContent = newBook.read;
+    td4Btn.textContent = newBook.read;
     removeBtn.textContent = "Remove";
-    td4Btn.textContent = "Change the status";
     td4Btn.classList.add("float-right");
     tr.setAttribute("data-index", myLibrary.indexOf(newBook));
 
@@ -40,18 +39,20 @@ function displayLibrary(newBook) {
     tr.appendChild(td5);
     td5.appendChild(removeBtn);
     td4.appendChild(td4Btn);
-
     table.appendChild(tr);
-}
 
-function removeBook() {
-    let bookRows = document.querySelectorAll(".book-row");
-    let arrayBookRows = [...bookRows];
-    arrayBookRows.forEach((row) => {
-        row.lastElementChild.addEventListener('click', () => {
-            row.remove();
-        })
+    td4Btn.addEventListener('click', () => {
+        if (td4Btn.textContent === "true") {
+            td4Btn.textContent = "false"
+        } else {
+            td4Btn.textContent = "true"
+        }
     })
+
+    removeBtn.addEventListener('click', () => {
+        tr.remove();
+    })
+
 }
 
 let btn = document.querySelector('button');
@@ -64,5 +65,4 @@ btn.addEventListener('click', function() {
     let newBook = new Book(author.value, title.value, pages.value, read.checked);
     addBookToLibrary(newBook);
     displayLibrary(newBook);
-    removeBook();
 });
