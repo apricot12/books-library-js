@@ -44,6 +44,15 @@ function displayLibrary(newBook) {
     table.appendChild(tr);
 }
 
+function removeBook() {
+    let bookRows = document.querySelectorAll(".book-row");
+    let arrayBookRows = [...bookRows];
+    arrayBookRows.forEach((row) => {
+        row.lastElementChild.addEventListener('click', () => {
+            row.remove();
+        })
+    })
+}
 
 let btn = document.querySelector('button');
 btn.addEventListener('click', function() {
@@ -55,4 +64,5 @@ btn.addEventListener('click', function() {
     let newBook = new Book(author.value, title.value, pages.value, read.checked);
     addBookToLibrary(newBook);
     displayLibrary(newBook);
+    removeBook();
 });

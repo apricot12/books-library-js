@@ -8,21 +8,15 @@
     <title>Library</title>
 </head>
 <body>
-    <form action="">
-        <label for="title">Title</label><br>
-        <input id="title" type="text"><br><br>
-
-        <label for="author">Author</label><br>
-        <input id="author" type="text"><br><br>
-
-        <label for="pages">Number of pages</label><br>
-        <input id="pages" type="number"><br><br>
-
-        <input id="read" type="checkbox">
-        <label for="read">Read status</label><br><br>
-
-        <button id="create-btn">Submit</button>
-    </form>
+    <div class="form">
+        <input type="text" id="author" name="author" placeholder="author" autofocus><br><br>
+        <input type="text" id="title" name="title" placeholder="title"><br><br>
+        <input type="number" id="pages" name="pages" placeholder="number of pages"><br><br>
+        <!-- <input type="text" id="read" name="read" placeholder="whether it’s been read"><br><br> -->
+        <input type="checkbox" id="read" name="read">
+        <label for="read"> Whether it’s been read</label><br><br>
+        <button>Submit</button>
+    </div>
 
     <table class="show_books">
         <tr>
