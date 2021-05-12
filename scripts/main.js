@@ -7,11 +7,11 @@ function Book(author, title, pages, read) {
   this.read = read;
 }
 
-function addBookToLibrary(newBook) {
+addBookToLibrary = (newBook) => {
   myLibrary.push(newBook);
 }
 
-function displayLibrary(newBook) {
+displayLibrary = (newBook) => {
   const table = document.querySelector('table');
   const tr = document.createElement('tr');
   tr.classList.add('book-row');
