@@ -7,11 +7,11 @@ function Book(author, title, pages, read) {
   this.read = read;
 }
 
-addBookToLibrary = (newBook) => {
+const addBookToLibrary = (newBook) => {
   myLibrary.push(newBook);
-}
+};
 
-displayLibrary = (newBook) => {
+const displayLibrary = (newBook) => {
   const table = document.querySelector('table');
   const tr = document.createElement('tr');
   tr.classList.add('book-row');
@@ -52,18 +52,17 @@ displayLibrary = (newBook) => {
   removeBtn.addEventListener('click', () => {
     tr.remove();
   });
-}
+};
 
-validateForm = () => {
-  var author = document.querySelector("#author").value
-  var title = document.querySelector("#title").value
-  var pages = document.querySelector("#pages").value
+const validateForm = () => {
+  const author = document.querySelector('#author').value;
+  const title = document.querySelector('#title').value;
+  const pages = document.querySelector('#pages').value;
 
-  if (author == "" || title == "" || pages == "") {
-    alert("Name must be filled out");
-    return false;
+  if (author === '' || title === '' || pages === '') {
+    alert('Name must be filled out'); // eslint-disable-line no-alert
   }
-}
+};
 
 const btn = document.querySelector('button');
 btn.addEventListener('click', () => {
@@ -72,9 +71,8 @@ btn.addEventListener('click', () => {
   const pages = document.querySelector('#pages');
   const read = document.querySelector('#read');
 
-  if (author.value == "" || title.value == "" || pages.value == "") {
+  if (author.value === '' || title.value === '' || pages.value === '') {
     validateForm();
-    return false;
   } else {
     const newBook = new Book(author.value, title.value, pages.value, read.checked);
     addBookToLibrary(newBook);
