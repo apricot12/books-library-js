@@ -13,6 +13,10 @@ Books can be added, toggled between read or not read, and also removed.
 - JavaScript
 - CSS
 
+## Live Demo
+
+[Live Demo Link](https://amazing-visvesvaraya-c067d2.netlify.app/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
