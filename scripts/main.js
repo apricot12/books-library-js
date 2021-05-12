@@ -54,6 +54,17 @@ displayLibrary = (newBook) => {
   });
 }
 
+validateForm = () => {
+  var author = document.querySelector("#author").value
+  var title = document.querySelector("#title").value
+  var pages = document.querySelector("#pages").value
+
+  if (author == "" || title == "" || pages == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+
 const btn = document.querySelector('button');
 btn.addEventListener('click', () => {
   const author = document.querySelector('#author');
@@ -64,4 +75,5 @@ btn.addEventListener('click', () => {
   const newBook = new Book(author.value, title.value, pages.value, read.checked);
   addBookToLibrary(newBook);
   displayLibrary(newBook);
+  validateForm();
 });
