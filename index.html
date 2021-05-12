@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Library</title>
+</head>
+<body>
+    <div class="form">
+        <input type="text" id="author" name="author" placeholder="author" autofocus><br><br>
+        <input type="text" id="title" name="title" placeholder="title"><br><br>
+        <input type="number" id="pages" name="pages" placeholder="number of pages"><br><br>
+        <!-- <input type="text" id="read" name="read" placeholder="whether it’s been read"><br><br> -->
+        <input type="checkbox" id="read" name="read">
+        <label for="read"> Whether it’s been read</label><br><br>
+        <button>Submit</button>
+    </div>
+
+    <table class="show_books">
+        <tr>
+            <th>Author</th>
+            <th>Title</th>
+            <th>Number of pages</th>
+            <th>Whether it’s been read</th>
+            <th>Options</th>
+        </tr>
+    </table>
+
+    <script src="/scripts/main.js"></script>
+</body>
+</html>
