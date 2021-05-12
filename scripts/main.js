@@ -72,8 +72,12 @@ btn.addEventListener('click', () => {
   const pages = document.querySelector('#pages');
   const read = document.querySelector('#read');
 
-  const newBook = new Book(author.value, title.value, pages.value, read.checked);
-  addBookToLibrary(newBook);
-  displayLibrary(newBook);
-  validateForm();
+  if (author.value == "" || title.value == "" || pages.value == "") {
+    validateForm();
+    return false;
+  } else {
+    const newBook = new Book(author.value, title.value, pages.value, read.checked);
+    addBookToLibrary(newBook);
+    displayLibrary(newBook);
+  }
 });
