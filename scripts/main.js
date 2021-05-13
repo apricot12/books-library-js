@@ -1,10 +1,7 @@
 const myLibrary = [];
 
-function Book(author, title, pages, read) {
-  this.author = author;
-  this.title = title;
-  this.pages = pages;
-  this.read = read;
+const Book = (author, title, pages, read) => {
+  return { author, title, pages, read };
 }
 
 const addBookToLibrary = (newBook) => {
@@ -74,7 +71,7 @@ btn.addEventListener('click', () => {
   if (author.value === '' || title.value === '' || pages.value === '') {
     validateForm();
   } else {
-    const newBook = new Book(author.value, title.value, pages.value, read.checked);
+    const newBook = Book(author.value, title.value, pages.value, read.checked);
     addBookToLibrary(newBook);
     displayLibrary(newBook);
   }
